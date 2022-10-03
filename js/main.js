@@ -11,6 +11,9 @@ searchBtn.addEventListener('click', () => {
     .then(function(response){
         img.src = response.data[Math.floor(Math.random() * 50)].images.original.url
     })
+    .catch(function(err){
+        img.src = 'https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png'
+    })
 })
 
 const img = document.querySelector('img')
@@ -20,6 +23,9 @@ fetch(`https://api.giphy.com/v1/gifs/search?api_key=kNz4rhxdiTEePFuPQJXKYZltwUB2
     })
     .then(function(response){
         img.src = response.data[Math.floor(Math.random() * 50)].images.original.url
+    })
+    .catch(function(err){
+        img.src = 'https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png'
     })
 
 const switchBtn = document.querySelector('#moreSmax')
@@ -31,5 +37,8 @@ switchBtn.addEventListener('click', ()=> {
     })
     .then(function(response){
         img.src = response.data[Math.floor(Math.random() * 50)].images.original.url
+    })
+    .catch(function(err){
+        img.src = 'https://www.elegantthemes.com/blog/wp-content/uploads/2020/02/000-404.png'
     })
 })
