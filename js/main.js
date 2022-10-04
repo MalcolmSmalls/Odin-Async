@@ -98,3 +98,25 @@ switchBtn.addEventListener('click', async () => {
 
 })
 
+function sleep (amount) {
+    return new Promise((resolve, reject) => {
+        if(amount <= 300){
+            return reject ('That is too fast!');
+        }
+        setTimeout(() => resolve (`Slept for ${amount}`), amount)
+    })
+}
+
+sleep(500)
+    .then((result) => {
+        console.log(result)
+        return sleep(1000)
+    })
+    .then((result) => {
+        console.log(result)
+        return sleep(750)
+    })
+    .then((result) => {
+        console.log(result)
+        console.log('Done!')
+    })
